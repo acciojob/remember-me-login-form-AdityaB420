@@ -1,5 +1,4 @@
-//your JS code here. If required.
-document.addEventListener('DOMContentLoaded', function() {
+ document.addEventListener('DOMContentLoaded', function() {
       const usernameInput = document.getElementById('username');
       const passwordInput = document.getElementById('password');
       const rememberMeCheckbox = document.getElementById('checkbox');
@@ -31,6 +30,15 @@ document.addEventListener('DOMContentLoaded', function() {
         alert('Logged in as ' + username);
       });
 
+      existingUserButton.addEventListener('click', function(event) {
+        event.preventDefault();
+
+        const savedUsername = localStorage.getItem('username');
+        alert('Logged in as ' + savedUsername);
+      });
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+      const existingUserButton = document.getElementById('existing');
       existingUserButton.addEventListener('click', function(event) {
         event.preventDefault();
 
